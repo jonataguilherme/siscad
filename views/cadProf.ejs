@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ptb">
+<head>
+    <title>Sistema de Matricula</title>
+    <link href="style.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="iconic.css" media="screen" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="prefix-free.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+        function liberar(a)
+        {
+            var elements = document.getElementsByName(a);	
+    
+            for(var element of elements){
+                if (element.disabled==false)
+                {
+                    element.disabled=true;
+                }
+                else
+                {
+                    element.disabled=false;
+                }
+                
+            }
+
+        }
+        function exibir_ocultar() 
+        {
+            var qtdisc = parseInt(document.getElementById("qtdiscipline").value);
+            if (qtdisc)
+            {
+                for (i = 3 ;i > qtdisc; i--)
+                {
+                    var res = 'disc'.concat(i - 1);
+                    document.getElementById(res).style.visibility = 'hidden';
+                }
+            }
+            for (i = 0; i < qtdisc; i++)
+            {
+                var res = 'disc'.concat(i);
+                document.getElementById(res).style.visibility = 'visible';
+            }
+        }
+    </script>
+    <div class="wrap">
+            <nav>
+                <ul class="menu">
+                    <li><a href="/"><span class="iconic home"></span> Home</a></li>
+                    <li><a href="#"><span class="iconic plus-alt"></span> Sobre</a>
+                        <ul>
+                            <li><a href="#">Sistema</a></li>
+                            <li><a href="#">Desenvolvedores</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><span class="iconic map-pin"></span> Cadastro</a>
+                        <ul>
+                            <li><a href="/Professor">Professores</a></li>
+                            <li><a href="/Turma">Turmas</a></li>
+                            <li><a href="/Disciplina">Disciplinas</a></li>
+                        </ul>
+                    <li><a href="#"><span class="iconic magnifying-glass"></span> Relatorio</a>
+                        <ul>
+                            <li><a href="#">Professores</a></li>
+                            <li><a href="#">Turmas</a></li>
+                            <li><a href="#">Disciplinas</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><span class="iconic mail"></span> Contato</a>
+                        <ul>
+                            <li><a href="#">E-mail</a></li>
+                            <li><a href="#">Telefones</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </nav>
+    </br>   
+    <h1 class="title">Cadastro de Professor</h1>
+    </br>
+    </br>
+        <form name="cadProf">
+        </br>
+            <p class="nome">
+                <label for="nome">Nome</label>            
+                <input type="text" id="nomeid" placeholder="Professor" required="required" name="nome" />
+                
+            </p>
+        </br>
+            <p class="nome">
+                <label for="email">Email</label>
+                <input type="email" id="emailid" placeholder="seuemail@mail.com" name="email" />
+            </p>
+        </br>
+            <p class="nome1">
+                    <label for="day">
+                            <input type="checkbox" id="day2" name="dia" value="2" onclick="liberar('segunda')">Segunda-Feira 
+                    </br>   
+                            <label for="hour">&nbsp;&nbsp;Horarios</label>
+                            <input type="checkbox" id="2hora1" name="segunda" disabled="disabled" value="1">&nbsp;18-19 &nbsp;
+                            <input type="checkbox" id="2hora2" name="segunda" disabled="disabled" value="2">&nbsp;19-20 &nbsp;
+                            <input type="checkbox" id="2hora3" name="segunda" disabled="disabled" value="3">&nbsp;20-21 &nbsp;
+                            <input type="checkbox" id="2hor4" name="segunda" disabled="disabled" value="4">&nbsp;21-22 &nbsp;
+                        </label>
+                    </br></br>
+                        <label for="day">
+                            <input type="checkbox" id="day3" name="day" value="3" onclick="liberar('terca')"> Terca-Feira
+                        </br>
+                            <label for="hour">&nbsp;&nbsp;Horarios</label>
+                            <input type="checkbox" id="3hora1" name="terca" disabled="disabled" value="1">&nbsp;18-19 &nbsp;
+                            <input type="checkbox" id="3hora2" name="terca" disabled="disabled"value="2">&nbsp;19-20 &nbsp;
+                            <input type="checkbox" id="3hora3" name="terca" disabled="disabled" value="3">&nbsp;20-21 &nbsp;
+                            <input type="checkbox" id="3hor4" name="terca" disabled="disabled" value="4">&nbsp;21-22 &nbsp;
+                        </label>
+                    </br></br>
+                        <label for="day">
+                            <input type="checkbox" id="day4" name="day" value="4" onclick="liberar('quarta')"> Quarta-feira
+                        </br>
+                            <label for="hour">&nbsp;&nbsp;Horarios</label>
+                            <input type="checkbox" id="4hora1" name="quarta" disabled="disabled" value="1">&nbsp;18-19 &nbsp;
+                            <input type="checkbox" id="4hora2" name="quarta" disabled="disabled" value="2">&nbsp;19-20 &nbsp;
+                            <input type="checkbox" id="4hora3" name="quarta" disabled="disabled" value="3">&nbsp;20-21 &nbsp;
+                            <input type="checkbox" id="4hor4" name="quarta" disabled="disabled" value="4">&nbsp;21-22 &nbsp;
+                        </label>
+                    </br></br>
+                        <label for="day">  
+                            <input type="checkbox" id="day5" name="day" value="5" onclick="liberar('quinta')"> Quinta-feira
+                        </br>
+                            <label for="hour">&nbsp;&nbsp;Horarios</label>
+                            <input type="checkbox" id="5hora1" name="quinta" disabled="disabled" value="1">&nbsp;18-19 &nbsp;
+                            <input type="checkbox" id="5hora2" name="quinta" disabled="disabled" value="2">&nbsp;19-20 &nbsp;
+                            <input type="checkbox" id="5hora3" name="quinta" disabled="disabled" value="3">&nbsp;20-21 &nbsp;
+                            <input type="checkbox" id="5hor4" name="quinta" disabled="disabled" value="4">&nbsp;21-22 &nbsp;
+                        </label>
+                    </br></br>
+                        <label for="day">
+                            <input type="checkbox" id="day6" name="day" value="6" onclick="liberar('sexta')"> Sexta-feira
+                        </br>
+                            <label for="hour">&nbsp;&nbsp;Horarios</label>
+                            <input type="checkbox" id="6hora1" name="sexta" disabled="disabled" value="1">&nbsp;18-19 &nbsp;
+                            <input type="checkbox" id="6hora2" name="sexta" disabled="disabled" value="2">&nbsp;19-20 &nbsp;
+                            <input type="checkbox" id="6hora3" name="sexta" disabled="disabled" value="3">&nbsp;20-21 &nbsp;
+                            <input type="checkbox" id="6hor4" name="sexta" disabled="disabled" value="4">&nbsp;21-22 &nbsp;
+                        </label>
+            </br>
+            </p>
+            </br>
+            </br>
+            <p class="nome"> 
+                    <label for="qtddiscipline">Quantidade de disciplinas</label>
+                    <select id="qtdiscipline" onblur="exibir_ocultar();">
+                            <option value=""></option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                    </select>
+            </p>
+            </br>
+            <p class="discipline" id="disc0">
+                    <label for="discipline1">Disciplina</label>
+                    <input type="text" id="disciplineid1" placeholder="Materia" name="discipline" />
+            </p>
+            </br>
+            <p class="discipline" id="disc1">
+                    <label for="discipline2">Disciplina</label>
+                    <input type="text" id="disciplineid2"  placeholder="Materia" name="discipline" />
+            </p>
+            </br>
+            <p class="discipline" id="disc2">
+                    <label for="discipline3">Disciplina</label>
+                    <input type="text" id="disciplineid3"  placeholder="Materia" name="discipline" />
+            </p>
+             </br>
+            </br>
+            <div align="center">
+                <button class="button" onclick="Cadastrar()">Cadastrar</button>
+            </div>
+        </form>
+        </br>
+        </br>
+    </div>
+</body>
+</html>

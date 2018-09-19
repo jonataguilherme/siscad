@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ptb">
+    <head>
+        <title>Sistema de Matricula</title>
+		<link href="style.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="iconic.css" media="screen" rel="stylesheet" type="text/css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="prefix-free.js"></script>
+    </head>
+    <body>
+        <script type="text/javascript">
+            function exibir_ocultar() 
+            {
+                
+                
+                var qtdisc = document.getElementById("qtdiscipline").value;
+                if (qtdisc)
+            {
+                for (i = 6 ;i > qtdisc; i--)
+                {
+                    var res = 'disc'.concat(i - 1);
+                    document.getElementById(res).style.visibility = 'hidden';
+                }
+            }
+                for (i = 0; i < qtdisc; i++)
+                {
+                    var res = 'disc'.concat(i);
+                    document.getElementById(res).style.visibility = 'visible';
+                    //consle.log(res);
+                }
+            }
+        </script>
+        <div class="wrap">
+                <nav>
+                    <ul class="menu">
+                        <li><a href="/"><span class="iconic home"></span> Home</a></li>
+                        <li><a href="#"><span class="iconic plus-alt"></span> Sobre</a>
+                            <ul>
+                                <li><a href="#">Sistema</a></li>
+                                <li><a href="#">Desenvolvedores</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#"><span class="iconic map-pin"></span> Cadastro</a>
+                            <ul>
+                                <li><a href="/Professor">Professores</a></li>
+                                <li><a href="/Turma">Turmas</a></li>
+                                <li><a href="/Disciplina">Disciplinas</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#"><span class="iconic magnifying-glass"></span> Relatorio</a>
+                            <ul>
+                                <li><a href="#">Professores</a></li>
+                                <li><a href="#">Turmas</a></li>
+                                <li><a href="#">Disciplinas</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#"><span class="iconic mail"></span> Contato</a>
+                            <ul>
+                                <li><a href="#">E-mail</a></li>
+                                <li><a href="#">Telefones</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </nav>
+        </br>   
+        <h1 class="title">Cadastro de Turma</h1>
+        </br>
+        </br>
+            <form>
+                <p class="nome">
+                    <label for="turnome">Nome</label>            
+                    <input type="text" id="turnomeid" placeholder="Turma" required="required" name="turnome" />
+                    
+                </p>
+            </br>
+                <p class="nome"> 
+                    <label for="qtddiscipline">Quantidade de disciplinas</label>
+                    <select id="qtdiscipline" onblur="exibir_ocultar();">
+                            <option value=""></option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                    </select>
+                </p>
+            </br>
+                <p class="discipline" id="disc0">
+                        <label for="discipline1">Disciplina</label>
+                        <input type="text" id="disciplineid1" placeholder="Materia" name="discipline" />
+                        <label for="hour">Horario</label>
+                        <select id="hour0" >
+                            <option value=""></option>
+                            <option value="1">18-19</option>
+                            <option value="2">19-20</option>
+                            <option value="3">20-21</option>
+                            <option value="4">21-22</option>
+                        </select>
+                        <label for="day">Dia</label>
+                        <select id="day0">
+                            <option value=""></option>
+                            <option value="2">segunda-feira</option>
+                            <option value="3">terça-feira</option>
+                            <option value="4">quarta-feira</option>
+                            <option value="5">quinta-feira</option>
+                            <option value="6">sexta-feira</option>
+                        </select>
+                        <label for="nome">Professor</label>            
+                        <input type="text" id="nomeid1" placeholder="Professor" required="required" name="nome" />
+                </p>
+                <p class="discipline" id="disc1">
+                        <label for="discipline2">Disciplina</label>
+                        <input type="text" id="disciplineid2"  placeholder="Materia" name="discipline" />
+                        <label for="hour">Horario</label>
+                        <select id="hour2" >
+                            <option value=""></option>
+                            <option value="1">18-19</option>
+                            <option value="2">19-20</option>
+                            <option value="3">20-21</option>
+                            <option value="4">21-22</option>
+                        </select>
+                        <label for="day">Dia</label>
+                        <select id="day0">
+                            <option value=""></option>
+                            <option value="2">segunda-feira</option>
+                            <option value="3">terça-feira</option>
+                            <option value="4">quarta-feira</option>
+                            <option value="5">quinta-feira</option>
+                            <option value="6">sexta-feira</option>
+                        </select>
+                        <label for="nome">Professor</label>            
+                        <input type="text" id="nomeid2" placeholder="Professor" required="required" name="nome" />
+                </p>
+                <p class="discipline" id="disc2">
+                        <label for="discipline3">Disciplina</label>
+                        <input type="text" id="disciplineid3"  placeholder="Materia" name="discipline" />
+                        <label for="hour">Horario</label>
+                        <select id="hour3" >
+                            <option value=""></option>
+                            <option value="1">18-19</option>
+                            <option value="2">19-20</option>
+                            <option value="3">20-21</option>
+                            <option value="4">21-22</option>
+                        </select>
+                        <label for="day">Dia</label>
+                        <select id="day1">
+                            <option value=""></option>
+                            <option value="2">segunda-feira</option>
+                            <option value="3">terça-feira</option>
+                            <option value="4">quarta-feira</option>
+                            <option value="5">quinta-feira</option>
+                            <option value="6">sexta-feira</option>
+                        </select>
+                        <label for="nome">Professor</label>            
+                        <input type="text" id="nomeid3" placeholder="Professor" required="required" name="nome" />
+                </p>
+                <p class="discipline" id="disc3">
+                        <label for="discipline4">Disciplina</label>
+                        <input type="text" id="disciplineid4"  placeholder="Materia" name="discipline" />
+                        <label for="hour">Horario</label>
+                        <select id="hour4" >
+                            <option value=""></option>
+                            <option value="1">18-19</option>
+                            <option value="2">19-20</option>
+                            <option value="3">20-21</option>
+                            <option value="4">21-22</option>
+                        </select>
+                        <label for="day">Dia</label>
+                        <select id="day2">
+                            <option value=""></option>
+                            <option value="2">segunda-feira</option>
+                            <option value="3">terça-feira</option>
+                            <option value="4">quarta-feira</option>
+                            <option value="5">quinta-feira</option>
+                            <option value="6">sexta-feira</option>
+                        </select>
+                        <label for="nome">Professor</label>            
+                        <input type="text" id="nomeid4" placeholder="Professor" required="required" name="nome" />
+                </p>
+                <p class="discipline" id="disc4">
+                        <label for="discipline5">Disciplina</label>
+                        <input type="text" id="disciplineid5"  placeholder="Materia" name="discipline" />
+                        <label for="hour">Horario</label>
+                        <select id="hour5" >
+                            <option value=""></option>
+                            <option value="1">18-19</option>
+                            <option value="2">19-20</option>
+                            <option value="3">20-21</option>
+                            <option value="4">21-22</option>
+                        </select>
+                        <label for="day">Dia</label>
+                        <select id="day3">
+                            <option value=""></option>
+                            <option value="2">segunda-feira</option>
+                            <option value="3">terça-feira</option>
+                            <option value="4">quarta-feira</option>
+                            <option value="5">quinta-feira</option>
+                            <option value="6">sexta-feira</option>
+                        </select>
+                        <label for="nome">Professor</label>            
+                        <input type="text" id="nomeid5" placeholder="Professor" required="required" name="nome" />
+                </p>
+                <p class="discipline" id="disc5">
+                        <label for="discipline6">Disciplina</label>
+                        <input type="text" id="disciplineid6"  placeholder="Materia" name="discipline" />         
+                        <label for="hour">Horario</label>
+                        <select id="hour6" >
+                            <option value=""></option>
+                            <option value="1">18-19</option>
+                            <option value="2">19-20</option>
+                            <option value="3">20-21</option>
+                            <option value="4">21-22</option>
+                        </select>
+                        <label for="day">Dia</label>
+                        <select id="day4">
+                            <option value=""></option>
+                            <option value="2">segunda-feira</option>
+                            <option value="3">terça-feira</option>
+                            <option value="4">quarta-feira</option>
+                            <option value="5">quinta-feira</option>
+                            <option value="6">sexta-feira</option>
+                        </select>
+                        <label for="nome">Professor</label>   
+                        <input type="text" id="nomeid6" placeholder="Professor" required="required" name="nome" />
+                        
+                </p>
+            </br>
+            </br>
+                <div align="center">
+                    <button class="button" onclick="Cadastrar()">Cadastrar</button>
+                </div>
+            </form>
+            </br>
+            </br>
+            <div class="wrapper1">
+                <div class="item1">Visualizacao da Turma</div>
+                <div>Dia</div>
+                <div class="item3">Disciplina</div>
+                <div>Horario </div>
+                <div>Professor</div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ptb">
+    <head>
+        <title>Sistema de Matricula</title>
+		<link href="style.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="iconic.css" media="screen" rel="stylesheet" type="text/css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="prefix-free.js"></script>
+    </head>
+    <script>
+        function Cadastrar() {
+            document.getElementById("form").submit();
+            document.getElementById("form").reset();
+        }
+        </script>
+    <body>
+        <div class="wrap">
+            <nav>
+                <ul class="menu">
+                    <li><a href="/"><span class="iconic home"></span> Home</a></li>
+                    <li><a href="#"><span class="iconic plus-alt"></span> Sobre</a>
+                        <ul>
+                            <li><a href="#">Sistema</a></li>
+                            <li><a href="#">Desenvolvedores</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><span class="iconic map-pin"></span> Cadastro</a>
+                        <ul>
+                            <li><a href="/Professor">Professores</a></li>
+                            <li><a href="/Turma">Turmas</a></li>
+                            <li><a href="/Turma">Disciplinas</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><span class="iconic magnifying-glass"></span> Relatorio</a>
+                        <ul>
+                            <li><a href="#">Professores</a></li>
+                            <li><a href="#">Turmas</a></li>
+                            <li><a href="#">Disciplinas</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><span class="iconic mail"></span> Contato</a>
+                        <ul>
+                            <li><a href="#">E-mail</a></li>
+                            <li><a href="#">Telefones</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </nav>
+        </br>
+            <h1 class="title">Cadastro de Disciplina</h1>
+        </br>
+        </br>
+            <form action="/Disciplina" method="POST" id="form">
+                <p class="nome">
+                    <label for="code">Codigo</label>            
+                    <input class="internbox" type="text" id="codeid" placeholder="Codigo" required="required" name="code" />    
+                    <label for="discipline">Nome</label>            
+                    <input type="text" id="diciplineid" placeholder="Disciplina" required="required" name="discipline" />
+                    <label for="hour">Carga Horaria</label>
+                            <select id="hour" name="hour">
+                                <option value=""></option>
+                                <option value="1">1 hora</option>
+                                <option value="2">2 horas</option>
+                                <option value="3">3 horas</option>
+                                <option value="4">4 horas</option>
+                            </select>
+            
+                </p>
+        </br>
+        </br>
+                <div align="center">
+                    <button class="button" onclick="Cadastrar()">Cadastrar</button>
+                </div>
+            </form>
+        </br>
+        </br>
+        <div class="wrapper">
+            <div class="item1">Visualizacao da Disciplina</div>
+            <div>Codigo</div>
+            <div class="item3">Disciplina</div>
+            <div class="item4">Carga Horaria</div>
+        </div>
+         <div class="wrapper">
+                <!--<div class="item1">Visualizacao da Disciplina</div>-->
+                <table class="item1" id="table">
+                    <!--<tr>
+                        <th>Codigo</th>
+                        <th>Disciplina</th>
+                        <th>Carga Horaria</th>
+                    </tr>-->
+                    <% disciplinas.forEach(function(disciplina) 
+                        { %>           
+                            <tr>
+                                <td class="td1"><%= disciplina.cod %></td>
+                                <td class="td2"><%= disciplina.disciplina %></td>
+                                <td class="td3"><%= disciplina.carg_hora %></td>
+                            </tr>
+                        <% }); 
+                    %>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
