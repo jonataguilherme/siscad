@@ -27,6 +27,6 @@ app.get('/Professor', function(req, res) {
     res.render('cadProf');
 });
 
-app.listen(8080, function(){
-    console.log('Conectado na porta 8080');
+app.listen(8081, function(){
+    console.log('Conectado na porta 8081');
 });
