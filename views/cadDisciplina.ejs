@@ -1,7 +1,8 @@
 <!DOCTYPE html>
+<meta charset="utf-8"/>
 <html lang="ptb">
     <head>
-        <title>Sistema de Matricula</title>
+        <title>Sistema de Matrícula</title>
 		<link href="style.css" media="screen" rel="stylesheet" type="text/css" />
         <link href="iconic.css" media="screen" rel="stylesheet" type="text/css" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,8 +10,8 @@
     </head>
     <script>
         function Cadastrar() {
+            if(getElementById("form").)
             document.getElementById("form").submit();
-            document.getElementById("form").reset();
         }
         </script>
     <body>
@@ -53,11 +54,11 @@
         </br>
             <form action="/Disciplina" method="POST" id="form">
                 <p class="nome">
-                    <label for="code">Codigo</label>            
+                    <label for="code">Código</label>            
                     <input class="internbox" type="text" id="codeid" placeholder="Codigo" required="required" name="code" />    
                     <label for="discipline">Nome</label>            
                     <input type="text" id="diciplineid" placeholder="Disciplina" required="required" name="discipline" />
-                    <label for="hour">Carga Horaria</label>
+                    <label for="hour">Carga Horária</label>
                             <select id="hour" name="hour">
                                 <option value=""></option>
                                 <option value="1">1 hora</option>
@@ -70,25 +71,20 @@
         </br>
         </br>
                 <div align="center">
-                    <button class="button" onclick="Cadastrar()">Cadastrar</button>
+                    <input class="button" type="submit" value="Cadatrar">
+                    <input class="button" type="submit" value="Deletar">
                 </div>
             </form>
         </br>
         </br>
         <div class="wrapper">
             <div class="item1">Visualizacao da Disciplina</div>
-            <div>Codigo</div>
+            <div>Código</div>
             <div class="item3">Disciplina</div>
-            <div class="item4">Carga Horaria</div>
+            <div class="item4">Carga Horária</div>
         </div>
          <div class="wrapper">
-                <!--<div class="item1">Visualizacao da Disciplina</div>-->
                 <table class="item1" id="table">
-                    <!--<tr>
-                        <th>Codigo</th>
-                        <th>Disciplina</th>
-                        <th>Carga Horaria</th>
-                    </tr>-->
                     <% disciplinas.forEach(function(disciplina) 
                         { %>           
                             <tr>

@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express(); 
 var disciplina = require('./cadDisciplina');
+var professor = require('./cadProf');
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -23,8 +24,13 @@ app.post('/Disciplina', function(req, res) {
 app.get('/Turma', function(req, res) {
     res.render('cadTurma');
 });
+
 app.get('/Professor', function(req, res) {
     res.render('cadProf');
+});    
+
+app.post('/Professor', function(req, res) {
+    professor.post(req, res);
 });
 
 app.listen(8081, function(){
