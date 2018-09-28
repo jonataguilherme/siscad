@@ -165,7 +165,7 @@ nav {
         font-family: 'Droid Sans', sans-serif;;
 }
 .discipline{
-	visibility: hidden;
+	/*visibility: hidden;*/
 	font-style: italic;
 	font-size: 20px;
 	color: white;

@@ -92,18 +92,26 @@
         <form name="cadProf" action="/Professor" method="POST" id="form">
         </br>
             <p class="nome">
-                <label for="nome">Nome</label>            
+                <label for="nome">Nome:</label>            
                 <input type="text" id="nomeid" placeholder="Professor" required="required" name="prof" />
                 
             </p>
         </br>
             <p class="nome"> 
-                <label for="nome">Disciplina</label>
-                <input type="text" id="discipline" placeholder="Matéria" required="required" name="discipline" />
+                <label for="nome">Disciplina:</label>
+                <select id="discipline" name="discipline">
+                            <option value=""></option>
+                            <% disciplinas.forEach(function(disciplina) 
+                                { %>           
+                                    <option value="<%= disciplina.cod %>"><%= disciplina.disciplina %></option>  
+                                <% }); 
+                            %>
+                        </select>
+                <!--<input type="text" id="discipline" placeholder="Matéria" required="required" name="discipline" />-->
             </p>
         </br>
             <p class="nome">
-                <label for="email">Email</label>
+                <label for="email">Email:</label>
                 <input type="email" id="emailid" placeholder="seuemail@mail.com" name="email" />
             </p>
         </br>
@@ -119,7 +127,7 @@
                         </label>
                     </br></br>
                         <label for="day">
-                            <input type="checkbox" id="tercaday2" name="tercaday2" value="1"> Terca-Feira
+                            <input type="checkbox" id="tercaday2" name="tercaday2" value="2"> Terca-Feira
                         </br>
                             <label for="hour">&nbsp;&nbsp;Horários</label>
                             <input type="checkbox" id="terca1" name="terca1" value="1">&nbsp;18-19 &nbsp;
@@ -129,17 +137,17 @@
                         </label>
                     </br></br>
                         <label for="day">
-                            <input type="checkbox" id="quartaday3" name="quartaday3" value="1" onclick="liberar('quarta')"> Quarta-feira
+                            <input type="checkbox" id="quartaday3" name="quartaday3" value="3" onclick="liberar('quarta')"> Quarta-feira
                         </br>
                             <label for="hour">&nbsp;&nbsp;Horários</label>
                             <input type="checkbox" id="quarta1" name="quarta1" value="1">&nbsp;18-19 &nbsp;
                             <input type="checkbox" id="quarta2" name="quarta2" value="1">&nbsp;19-20 &nbsp;
-                            <input type="checkbox" id="quarta3" name="quarta4" value="1">&nbsp;20-21 &nbsp;
+                            <input type="checkbox" id="quarta3" name="quarta3" value="1">&nbsp;20-21 &nbsp;
                             <input type="checkbox" id="quarta4" name="quarta4" value="1">&nbsp;21-22 &nbsp;
                         </label>
                     </br></br>
                         <label for="day">  
-                            <input type="checkbox" id="quintaday4" name="quintaday4" value="1" onclick="liberar('quinta')"> Quinta-feira
+                            <input type="checkbox" id="quintaday4" name="quintaday4" value="4" onclick="liberar('quinta')"> Quinta-feira
                         </br>
                             <label for="hour">&nbsp;&nbsp;Horários</label>
                             <input type="checkbox" id="quinta1" name="quinta1" value="1">&nbsp;18-19 &nbsp;
@@ -149,7 +157,7 @@
                         </label>
                     </br></br>
                         <label for="day">
-                            <input type="checkbox" id="sextaday5" name="sextaday5" value="1" onclick="liberar('sexta')"> Sexta-feira
+                            <input type="checkbox" id="sextaday5" name="sextaday5" value="5" onclick="liberar('sexta')"> Sexta-feira
                         </br>
                             <label for="hour">&nbsp;&nbsp;Horários</label>
                             <input type="checkbox" id="sexta1" name="sexta1" value="1">&nbsp;18-19 &nbsp;

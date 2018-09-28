@@ -46,33 +46,50 @@ var professor = {
         
         console.log("Passei aqui1");
         console.log(req.body);
+        
 
         var sql = "";
         if(segundaday1 == 1){
-              sql += "INSERT INTO professor (email, nome, disciplina, dia, hora1, hora2, hora3, hora4) VALUES ('"+email+"', '"+prof+"' , '"+discipline+"',"+segundaday1+","+segunda1+","+segunda2+","+segunda3+","+segunda4+"); ";
-              
+              sql = "INSERT INTO professor (email, nome, disciplina, dia, hora1, hora2, hora3, hora4) VALUES ('"+email+"', '"+prof+"' , '"+discipline+"',"+segundaday1+","+segunda1+","+segunda2+","+segunda3+","+segunda4+"); ";
+              salvarprof(sql);
         }
 
-        if(tercaday2 == 1){
-          sql += "INSERT INTO professor (email, nome, disciplina, dia, hora1, hora2, hora3, hora4) VALUES ('"+email+"', '"+prof+"', '"+discipline+"', "+tercaday2+","+terca1+","+terca2+","+terca3+","+terca4+"); ";
-          
+        if(tercaday2 == 2){
+          sql = "INSERT INTO professor (email, nome, disciplina, dia, hora1, hora2, hora3, hora4) VALUES ('"+email+"', '"+prof+"', '"+discipline+"', "+tercaday2+","+terca1+","+terca2+","+terca3+","+terca4+"); ";
+          salvarprof(sql);
         }
 
-        if(quartaday3 == 1){
-          sql += "INSERT INTO professor (email, nome, disciplina,dia, hora1, hora2, hora3, hora4) VALUES ('"+email+"', '"+prof+"', "+discipline+", "+quartaday3+","+quarta1+","+quarta2+","+quarta3+","+quarta4+"); ";
-          
+        if(quartaday3 == 3){
+          sql = "INSERT INTO professor (email, nome, disciplina, dia, hora1, hora2, hora3, hora4) VALUES ('"+email+"', '"+prof+"', '"+discipline+"', "+quartaday3+","+quarta1+","+quarta2+","+quarta3+","+quarta4+"); ";
+          salvarprof(sql);
         }
 
-        if(quintaday4 == 1){
-          sql += "INSERT INTO professor (email, nome, dia, disciplina, hora1, hora2, hora3, hora4) VALUES ('"+email+"', '"+prof+"', '"+discipline+"', "+quintaday4+","+quinta1+","+quinta2+","+quinta3+","+quinta4+"); ";
-          
+        if(quintaday4 == 4){
+          sql = "INSERT INTO professor (email, nome, disciplina, dia, hora1, hora2, hora3, hora4) VALUES ('"+email+"', '"+prof+"', '"+discipline+"', "+quintaday4+","+quinta1+","+quinta2+","+quinta3+","+quinta4+"); ";
+          salvarprof(sql);
         }
 
-        if(sextaday5 == 1){
-          sql += "INSERT INTO professor (email, nome, dia, disciplina, hora1, hora2, hora3, hora4)) VALUES ('"+email+"', '"+prof+"', '"+discipline+"', "+sextaday5+","+sexta1+","+sexta2+","+sexta3+","+sexta4+"); ";
-          
+        if(sextaday5 == 5){
+          sql = "INSERT INTO professor (email, nome, disciplina, dia, hora1, hora2, hora3, hora4) VALUES ('"+email+"', '"+prof+"', '"+discipline+"', "+sextaday5+","+sexta1+","+sexta2+","+sexta3+","+sexta4+"); ";
+          salvarprof(sql);
         }
-       
+        res.redirect("http://localhost:8081/Professor");
+    },
+    "get" : function(req, res) {
+        pool.getConnection(function (err, connection) {
+          console.log("Conexão realizada com sucesso");
+          var sql = "Select disciplina, cod  FROM disciplina";
+          connection.query(sql, function (err, result) {
+              connection.release();
+              if (err) throw err;
+              console.log(result);
+              results = {disciplinas: result};
+              res.render("cadProf", results);
+            });
+      });
+    }
+}
+function salvarprof(sql){
   console.log(sql);
 
         if(sql){
@@ -82,15 +99,8 @@ var professor = {
                 connection.release();
                 if (err) throw err;
                 console.log("1 record inserted");
-                res.redirect("http://localhost:8081/Professor");
               });              
           });
         }
-    },
-    "get" : function(req, res) {
-            pool.getConnection(function (err, connection) {
-            console.log("Conexão realizada com sucesso");
-        });
-    }
 }
 module.exports=professor;

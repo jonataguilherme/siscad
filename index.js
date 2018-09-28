@@ -1,12 +1,19 @@
 var express = require('express');
 var app = express(); 
 var disciplina = require('./cadDisciplina');
+var turma =require ('./cadTurma');
 var professor = require('./cadProf');
+var find = require ('./find');
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.set('view engine', 'ejs');
 app.use(express.static('views'));
+
+app.post ('/find', function(req, res){
+    find.findDisciplina(req,res);
+
+});
 
 app.get('/', function(req, res) {
     res.render('index');
@@ -22,11 +29,17 @@ app.post('/Disciplina', function(req, res) {
 });
 
 app.get('/Turma', function(req, res) {
-    res.render('cadTurma');
+    turma.get(req, res);
+    //res.render('cadTurma');
+});
+app.post('/Turma', function(req, res) {
+    turma.post(req, res);
+    //res.render('cadTurma');
 });
 
 app.get('/Professor', function(req, res) {
-    res.render('cadProf');
+    professor.get(req, res);
+    //res.render('cadProf');
 });    
 
 app.post('/Professor', function(req, res) {
