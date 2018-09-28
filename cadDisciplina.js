@@ -19,7 +19,7 @@ var disciplina = {
                 connection.release();
                 if (err) throw err;
                 console.log("1 record inserted");
-                res.redirect("http://localhost:8081/Disciplina");
+                res.redirect("/Disciplina");
             });
         });
      },

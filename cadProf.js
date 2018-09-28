@@ -73,7 +73,7 @@ var professor = {
           sql = "INSERT INTO professor (email, nome, disciplina, dia, hora1, hora2, hora3, hora4) VALUES ('"+email+"', '"+prof+"', '"+discipline+"', "+sextaday5+","+sexta1+","+sexta2+","+sexta3+","+sexta4+"); ";
           salvarprof(sql);
         }
-        res.redirect("http://localhost:8081/Professor");
+        res.redirect("/Professor");
     },
     "get" : function(req, res) {
         pool.getConnection(function (err, connection) {
