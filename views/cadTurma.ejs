@@ -94,19 +94,6 @@
                     
                 </p>
             </br>
-                <!--<p class="nome"> 
-                    <label for="qtddiscipline">Quantidade de disciplinas</label>
-                    <select id="qtdiscipline" onblur="exibir_ocultar();">
-                            <option value=""></option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                    </select>
-                </p>
-            </br>-->
                 <p class="discipline" id="disc0">
                         <label for="discipline1">Disciplina:</label>
                         <select id="discipline1" name="discipline1">
@@ -135,153 +122,15 @@
                             <option value="5">sexta-feira</option>
                         </select>
                         <label for="nome">Professor:</label>            
-                        <!-- input type="text" id="nomeid1" placeholder="Professor" required="required" name="nome" / -->
                         <select id="professorid1" name="professorid1">
                             <option value=""></option>
                         </select>
                 </p>
-                <!--<p class="discipline" id="disc1">
-                        <label for="discipline2">Disciplina:</label>
-                        <select id="discipline2" name="discipline2">
-                            <option value=""></option>
-                            <% disciplinas.forEach(function(disciplina) 
-                                { %>           
-                                    <option value="<%= disciplina.cod %>"><%= disciplina.disciplina %></option>  
-                                <% }); 
-                            %>
-                        </select>
-                        <label for="hour">Horário:</label>
-                        <select id="hour2" >
-                            <option value=""></option>
-                            <option value="1">18-19</option>
-                            <option value="2">19-20</option>
-                            <option value="3">20-21</option>
-                            <option value="4">21-22</option>
-                        </select>
-                        <label for="day">Dia:</label>
-                        <select id="day0">
-                            <option value=""></option>
-                            <option value="1">segunda-feira</option>
-                            <option value="2">terça-feira</option>
-                            <option value="3">quarta-feira</option>
-                            <option value="4">quinta-feira</option>
-                            <option value="5">sexta-feira</option>
-                        </select>
-                        <label for="nome">Professor:</label>            
-                        <input type="text" id="nomeid2" placeholder="Professor" required="required" name="nome" />
-                </p>
-                <p class="discipline" id="disc2">
-                        <label for="discipline3">Disciplina:</label>
-                        <select id="discipline3" name="discipline3">
-                            <option value=""></option>
-                            <% disciplinas.forEach(function(disciplina) 
-                                { %>           
-                                    <option value="<%= disciplina.cod %>"><%= disciplina.disciplina %></option>  
-                                <% }); 
-                            %>
-                        </select>
-                        <label for="hour">Horário:</label>
-                        <select id="hour3" >
-                            <option value=""></option>
-                            <option value="1">18-19</option>
-                            <option value="2">19-20</option>
-                            <option value="3">20-21</option>
-                            <option value="4">21-22</option>
-                        </select>
-                        <label for="day">Dia:</label>
-                        <select id="day1">
-                            <option value=""></option>
-                            <option value="1">segunda-feira</option>
-                            <option value="2">terça-feira</option>
-                            <option value="3">quarta-feira</option>
-                            <option value="4">quinta-feira</option>
-                            <option value="5">sexta-feira</option>
-                        </select>
-                        <label for="nome">Professor:</label>            
-                        <input type="text" id="nomeid3" placeholder="Professor" required="required" name="nome" />
-                </p>
-                <p class="discipline" id="disc3">
-                        <label for="discipline4">Disciplina:</label>
-                        <select id="discipline4" name="discipline4">
-                            <option value=""></option>
-                            <% disciplinas.forEach(function(disciplina) 
-                                { %>           
-                                    <option value="<%= disciplina.cod %>"><%= disciplina.disciplina %></option>  
-                                <% }); 
-                            %>
-                        </select>
-                        <label for="hour">Horário:</label>
-                        <select id="hour4" >
-                            <option value=""></option>
-                            <option value="1">18-19</option>
-                            <option value="2">19-20</option>
-                            <option value="3">20-21</option>
-                            <option value="4">21-22</option>
-                        </select>
-                        <label for="day">Dia:</label>
-                        <select id="day2">
-                            <option value=""></option>
-                            <option value="1">segunda-feira</option>
-                            <option value="2">terça-feira</option>
-                            <option value="3">quarta-feira</option>
-                            <option value="4">quinta-feira</option>
-                            <option value="5">sexta-feira</option>
-                        </select>
-                        <label for="nome">Professor:</label>            
-                        <input type="text" id="nomeid4" placeholder="Professor" required="required" name="nome" />
-                </p>
-                <p class="discipline" id="disc4">
-                        <label for="discipline5">Disciplina</label>
-                        <input type="text" id="disciplineid5"  placeholder="Materia" name="discipline" />
-                        <label for="hour">Horário:</label>
-                        <select id="hour5" >
-                            <option value=""></option>
-                            <option value="1">18-19</option>
-                            <option value="2">19-20</option>
-                            <option value="3">20-21</option>
-                            <option value="4">21-22</option>
-                        </select>
-                        <label for="day">Dia:</label>
-                        <select id="day3">
-                            <option value=""></option>
-                            <option value="2">segunda-feira</option>
-                            <option value="3">terça-feira</option>
-                            <option value="4">quarta-feira</option>
-                            <option value="5">quinta-feira</option>
-                            <option value="6">sexta-feira</option>
-                        </select>
-                        <label for="nome">Professor:</label>            
-                        <input type="text" id="nomeid5" placeholder="Professor" required="required" name="nome" />
-                </p>
-                <p class="discipline" id="disc5">
-                        <label for="discipline6">Disciplina</label>
-                        <input type="text" id="disciplineid6"  placeholder="Materia" name="discipline" />         
-                        <label for="hour">Horário</label>
-                        <select id="hour6" >
-                            <option value=""></option>
-                            <option value="1">18-19</option>
-                            <option value="2">19-20</option>
-                            <option value="3">20-21</option>
-                            <option value="4">21-22</option>
-                        </select>
-                        <label for="day">Dia</label>
-                        <select id="day4">
-                            <option value=""></option>
-                            <option value="2">segunda-feira</option>
-                            <option value="3">terça-feira</option>
-                            <option value="4">quarta-feira</option>
-                            <option value="5">quinta-feira</option>
-                            <option value="6">sexta-feira</option>
-                        </select>
-                        <label for="nome">Professor</label>   
-                        <input type="text" id="nomeid6" placeholder="Professor" required="required" name="nome" />
-                        
-                </p> -->
             </br>
             </br>
                 <div align="center">
                     <input class="button" type="submit" value="Cadatrar">
-                    <input class="button" type="submit" value="Deletar">
+                    <!--<input class="button" type="submit" value="Deletar">-->
                 </div>
             </form>
             </br>
@@ -318,12 +167,6 @@
                             </tr>
                         <% }); 
                     %>       
-                    <!--<tr>
-                        <td class="td_t1">Teste 1</td>
-                        <td class="td_t2">Teste 2</td>
-                        <td class="td_t3">Teste 3</td>
-                        <td class="td3">Teste 4</td>
-                    </tr>-->
                 </table>
             </div>
         </div>
