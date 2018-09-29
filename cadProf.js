@@ -87,7 +87,7 @@ var professor = {
             connection.query(sql2, function (err2, result2){
               if (err2) throw err2;
               console.log (result2);
-              results = {disciplinas: result, professor: result2};
+              results = {disciplinas: result, professores: result2};
               res.render("cadProf", results);
             });
           });

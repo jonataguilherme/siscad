@@ -123,6 +123,53 @@
             </br>
             </p>
             </br>
+            <div class="wrapper1">
+                <div class="item1">Lista de Professores</div>
+            </div>
+            <div class="wrapper">
+                <table class="item1" id="table">
+                    <tr>
+                        <td class="td1_t1"> Dia</td>
+                        <td class="td3"> Professor</td>
+                        <td class="td1_t2"> Disciplina</td>
+                        <td class="td1_t3"> 18-19</td>
+                        <td class="td1_t3"> 19-20</td>
+                        <td class="td1_t3"> 20-21</td>
+                        <td class="td1_t3"> 21-22</td>                        
+                    </tr>
+                    <% professores.forEach(function(professor) 
+                        { %>           
+                            <tr>
+                                <td class="td1_t1">
+                                    <% if (professor.dia == 1) {%>Segunda<%} %>
+                                    <% if (professor.dia == 2) {%>Terça<%} %>
+                                    <% if (professor.dia == 3) {%>Quarta<%} %>
+                                    <% if (professor.dia == 4) {%>Quinta<%} %>
+                                    <% if (professor.dia == 5) {%>Sexta<%} %>
+                                </td>
+                                <td class="td_t2"><%= professor.nome %></td>
+                                <td class="td_t2"><%= professor.disciplina %></td>
+                                <td class="td_t3">
+                                    <% if (professor.hora1 == 1) {%>Sim<%} %>
+                                    <% if (professor.hora1 == 0) {%>Não<%} %>
+                               </td>
+                               <td class="td_t3">
+                                    <% if (professor.hora2 == 1) {%>Sim<%} %>
+                                    <% if (professor.hora2 == 0) {%>Não<%} %>
+                               </td>
+                               <td class="td_t3">
+                                    <% if (professor.hora3 == 1) {%>Sim<%} %>
+                                    <% if (professor.hora3 == 0) {%>Não<%} %>
+                               </td>
+                               <td class="td_t3">
+                                    <% if (professor.hora4 == 1) {%>Sim<%} %>
+                                    <% if (professor.hora4 == 0) {%>Não<%} %>
+                               </td>      
+                            </tr>
+                        <% }); 
+                    %>       
+                </table>
+            </div>
             <div align="center">
                 <input class="button" type="submit" value="Cadatrar">
                 <!--<input class="button" type="submit" value="Deletar">-->
