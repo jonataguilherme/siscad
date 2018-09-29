@@ -31,12 +31,17 @@ var turma = {
     pool.getConnection(function (err, connection) {
       console.log("Conexão realizada com sucesso");
       var sql = "Select disciplina, cod  FROM disciplina";
+      var sql2 = "Select turma.dia, disciplina.disciplina, professor.nome as professor, turma.horario FROM turma join disciplina on turma.fkdisciplina=disciplina.cod join  professor on turma.fkprofessor=professor.id";
       connection.query(sql, function (err, result) {
-          connection.release();
+          //connection.release();
           if (err) throw err;
           console.log(result);
-          results = {disciplinas: result};
-          res.render("cadTurma", results);
+          connection.query(sql2, function (err2, result2){
+            if (err2) throw err2;
+            console.log(result2);
+            results = {disciplinas: result, turmas: result2};
+            res.render("cadTurma", results);
+          });
         });
   });
   }

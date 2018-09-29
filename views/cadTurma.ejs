@@ -288,19 +288,42 @@
             </br>
             <div class="wrapper1">
                 <div class="item1">Visualização da Turma</div>
-                <div>Dia</div>
-                <div class="item3">Disciplina</div>
-                <div>Horário </div>
-                <div>Professor</div>
             </div>
             <div class="wrapper">
-                <table class="item1" id="table">       
+                <table class="item1" id="table">
                     <tr>
+                        <td class="td1_t1"> Dia</td>
+                        <td class="td1_t2"> Disciplina</td>
+                        <td class="td1_t3"> Horário</td>
+                        <td class="td3"> Professor</td>
+                    </tr>
+                    <% turmas.forEach(function(turma) 
+                        { %>           
+                            <tr>
+                                <td class="td1_t1">
+                                    <% if (turma.horario == 1) {%>Segunda<%} %>
+                                    <% if (turma.horario == 2) {%>Terça<%} %>
+                                    <% if (turma.horario == 3) {%>Quarta<%} %>
+                                    <% if (turma.horario == 4) {%>Quinta<%} %>
+                                    <% if (turma.horario == 5) {%>Sexta<%} %>
+                                </td>
+                                <td class="td_t2"><%= turma.disciplina %></td>
+                                <td class="td_t3">
+                                    <% if (turma.dia == 1) {%>18-19<%} %>
+                                    <% if (turma.dia == 2) {%>19-20<%} %>
+                                    <% if (turma.dia == 3) {%>20-21<%} %>
+                                    <% if (turma.dia == 4) {%>21-22<%} %>
+                               </td>      
+                                <td class="td3"><%= turma.professor %></td>
+                            </tr>
+                        <% }); 
+                    %>       
+                    <!--<tr>
                         <td class="td_t1">Teste 1</td>
                         <td class="td_t2">Teste 2</td>
                         <td class="td_t3">Teste 3</td>
                         <td class="td3">Teste 4</td>
-                    </tr>
+                    </tr>-->
                 </table>
             </div>
         </div>
