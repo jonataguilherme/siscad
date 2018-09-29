@@ -76,18 +76,23 @@ var professor = {
         res.redirect("/Professor");
     },
     "get" : function(req, res) {
-        pool.getConnection(function (err, connection) {
-          console.log("Conexão realizada com sucesso");
-          var sql = "Select disciplina, cod  FROM disciplina";
-          connection.query(sql, function (err, result) {
-              connection.release();
-              if (err) throw err;
-              console.log(result);
-              results = {disciplinas: result};
+      pool.getConnection(function (err, connection) {
+        console.log("Conexão realizada com sucesso");
+        var sql = "Select disciplina, cod  FROM disciplina";
+        var sql2 = "Select * FROM professor";
+        connection.query(sql, function (err, result) {
+            //connection.release();
+            if (err) throw err;
+            console.log(result);
+            connection.query(sql2, function (err2, result2){
+              if (err2) throw err2;
+              console.log (result2);
+              results = {disciplinas: result, professor: result2};
               res.render("cadProf", results);
             });
-      });
-    }
+          });
+    });
+  }
 }
 function salvarprof(sql){
   console.log(sql);

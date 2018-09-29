@@ -33,7 +33,7 @@ var turma = {
       var sql = "Select disciplina, cod  FROM disciplina";
       var sql2 = "Select turma.dia, disciplina.disciplina, professor.nome as professor, turma.horario FROM turma join disciplina on turma.fkdisciplina=disciplina.cod join  professor on turma.fkprofessor=professor.id";
       connection.query(sql, function (err, result) {
-          //connection.release();
+          connection.release();
           if (err) throw err;
           console.log(result);
           connection.query(sql2, function (err2, result2){
