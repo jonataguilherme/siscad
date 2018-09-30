@@ -157,6 +157,13 @@ nav {
 		word-spacing: 8px;
         font-family: 'Droid Sans', sans-serif;;
 }
+.nome2{
+	font-style: italic;
+	font-size: 20px;
+	color: white;
+	text-align: left;
+	font-family: 'Droid Sans', sans-serif;;
+}
 .title{
 		font-style: italic;
 		text-align: center;
