@@ -21,6 +21,7 @@ app.get('/', function(req, res) {
 
 app.get('/Desenvolvedores', function(req, res) {
     res.render('desenvolvedores');
+});
 
 app.get('/Disciplina', function(req, res) {
     disciplina.get(req, res);
