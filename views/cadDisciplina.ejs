@@ -8,6 +8,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="prefix-free.js"></script>
     </head>
+    <script language="Javascript">
+            window.onload = function () {
+                setTimeout('location.reload();', 120000);
+            }
+    </script>
     <script>
         function Cadastrar() {
             if(getElementById("form").)
@@ -27,16 +32,16 @@
                     </li>
                     <li><a href="#"><span class="iconic map-pin"></span> Cadastro</a>
                         <ul>
+                            <li><a href="/Disciplina">Disciplinas</a></li>
                             <li><a href="/Professor">Professores</a></li>
                             <li><a href="/Turma">Turmas</a></li>
-                            <li><a href="/Turma">Disciplinas</a></li>
                         </ul>
                     </li>
                     <li><a href="#"><span class="iconic magnifying-glass"></span> Relatorio</a>
-                        <ul>
-                            <li><a href="#">Professores</a></li>
+                        <ul class="subs">
+                            <li><a href="#">Disciplina</a></li>
+                            <li><a href="#">Professor</a></li>
                             <li><a href="#">Turmas</a></li>
-                            <li><a href="#">Disciplinas</a></li>
                         </ul>
                     </li>
                     <li><a href="#"><span class="iconic mail"></span> Contato</a>
