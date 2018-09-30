@@ -23,6 +23,14 @@ app.get('/Desenvolvedores', function(req, res) {
     res.render('desenvolvedores');
 });
 
+app.get('/Sistema', function(req, res) {
+    res.render('sistema');
+});
+
+app.get('/Manual', function(req, res) {
+    res.render('Manual');
+});
+
 app.get('/Disciplina', function(req, res) {
     disciplina.get(req, res);
     //res.render('cadDisciplina');
