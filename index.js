@@ -28,7 +28,7 @@ app.get('/Sistema', function(req, res) {
 });
 
 app.get('/Manual', function(req, res) {
-    res.render('Manual');
+    res.render('manual');
 });
 
 app.get('/Disciplina', function(req, res) {
