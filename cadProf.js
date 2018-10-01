@@ -79,7 +79,7 @@ var professor = {
       pool.getConnection(function (err, connection) {
         console.log("Conexão realizada com sucesso");
         var sql = "Select disciplina, cod  FROM disciplina";
-        var sql2 = "Select * FROM professor";
+        var sql2 = "Select p.dia, p.nome, d.disciplina, p.hora1, p.hora2, p.hora3, p.hora4 FROM professor p inner join disciplina d on p.disciplina = d.cod";
         connection.query(sql, function (err, result) {
             //connection.release();
             if (err) throw err;
