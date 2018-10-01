@@ -88,6 +88,7 @@ var professor = {
               if (err2) throw err2;
               console.log (result2);
               results = {disciplinas: result, professores: result2};
+              //connecto.close();
               res.render("cadProf", results);
             });
           });
