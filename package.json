@@ -12,8 +12,9 @@
     "body-parser": "latest",
     "ejs": "latest",
     "express": "latest",
-    "request": "latest",
+    "moment": "^2.22.2",
     "mongoose": "latest",
-    "mysql": "latest"
+    "mysql": "latest",
+    "request": "latest"
   }
 }

@@ -6,11 +6,13 @@
     <link href="style.css" media="screen" rel="stylesheet" type="text/css" />
     <link href="iconic.css" media="screen" rel="stylesheet" type="text/css" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="moment.js"></script>
     <script src="prefix-free.js"></script>
     <script language="Javascript">
         window.onload = function () {
             setTimeout('location.reload();', 120000);
     }
+
     </script>
 </head>
 <script>
@@ -73,6 +75,13 @@
                         </select>
                 <label for="email">Email:</label>
                 <input type="email" id="emailid" placeholder="seuemail@mail.com" name="email" />
+                <label for="time">Time:</label>
+                <input type="time" id="hour" name="hour" readonly>
+                <script type="text/javascript">
+                    var now = moment().utc().format('hh:mm:ss');
+                    document.getElementById("hour").value = now;
+                    document.getElementById("hour").innerHTML = now;
+                </script>                
             </p>
         </br>
         </br>
@@ -182,9 +191,11 @@
                     %>       
                 </table>
             </div>
+            <p id="demo"  required="required" name="demo" value=""></p>
         </form>
         </br>
         </br>
+       
     </div>
 </body>
 </html>

@@ -3,7 +3,7 @@ var app = express();
 
 app.set('view engine', 'ejs');
 app.use(express.static('views'));
-
+hora = require('./views/moment');
 
 pool = require('./connection');
 
@@ -12,6 +12,8 @@ var professor = {
         prof = req.body.prof;
         email = req.body.email;
         discipline = req.body.discipline;
+        horas = req.body.hour;
+        console.log(horas);
         
         segundaday1 = req.body.segundaday1;
         tercaday2 = req.body.tercaday2;
@@ -43,11 +45,9 @@ var professor = {
         sexta2 = req.body.sexta2 || 0;
         sexta3 = req.body.sexta3 || 0;
         sexta4 = req.body.sexta4 || 0;
-        
-        console.log("Passei aqui1");
+    
         console.log(req.body);
         
-
         var sql = "";
         if(segundaday1 == 1){
               sql = "INSERT INTO professor (email, nome, disciplina, dia, hora1, hora2, hora3, hora4) VALUES ('"+email+"', '"+prof+"' , '"+discipline+"',"+segundaday1+","+segunda1+","+segunda2+","+segunda3+","+segunda4+"); ";
@@ -109,4 +109,6 @@ function salvarprof(sql){
           });
         }
 }
+  
+
 module.exports=professor;
