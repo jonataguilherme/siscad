@@ -75,11 +75,13 @@
                         </select>
                 <label for="email">Email:</label>
                 <input type="email" id="emailid" placeholder="seuemail@mail.com" name="email" />
-                <label for="time">Time:</label>
-                <input type="time" id="hour" name="hour" readonly>
+                </br>
+                </br>
+                <label for="time">Hora do Cadastro:</label>
+                <input type="datetime" id="hour" name="hour" readonly>
                 <!--Ajuste-->
                 <script type="text/javascript">
-                    var now = moment().utc().format('hh:mm:ss');
+                    var now = moment().locale('pt-BR').format('YYYY-MM-DD HH:mm:ss');
                     document.getElementById("hour").value = now;
                     document.getElementById("hour").innerHTML = now;
                 </script>                
@@ -192,7 +194,6 @@
                     %>       
                 </table>
             </div>
-            <p id="demo"  required="required" name="demo" value=""></p>
         </form>
         </br>
         </br>
